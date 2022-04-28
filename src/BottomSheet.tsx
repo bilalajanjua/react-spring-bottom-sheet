@@ -51,6 +51,7 @@ export const BottomSheet = React.forwardRef<
     children,
     sibling,
     className,
+    overlayProps,
     footer,
     header,
     open: _open,
@@ -660,6 +661,7 @@ export const BottomSheet = React.forwardRef<
             if (onDismiss) onDismiss()
           }
         }}
+        {...overlayProps}
       >
         {header !== false && (
           <div key="header" data-rsbs-header ref={headerRef} {...bind()}>

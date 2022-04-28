@@ -49,6 +49,11 @@ export type Props = {
   children: React.ReactNode
 
   /**
+   * Props passed to the overlay div component
+   */
+  overlayProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+  /**
    * Similar to children, but renders next to the overlay element rather than inside it.
    * Useful for things that are position:fixed and need to overlay the backdrop and still be interactive
    * in blocking mode.
