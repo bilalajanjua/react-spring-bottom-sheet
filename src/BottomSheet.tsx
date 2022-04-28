@@ -52,6 +52,11 @@ export const BottomSheet = React.forwardRef<
     sibling,
     className,
     overlayProps,
+    backdropProps,
+    headerProps,
+    scrollContainerProps,
+    contentProps,
+    footerProps,
     footer,
     header,
     open: _open,
@@ -640,6 +645,7 @@ export const BottomSheet = React.forwardRef<
       {sibling}
       {blocking && (
         <div
+          {...backdropProps}
           // This component needs to be placed outside bottom-sheet, as bottom-sheet uses transform and thus creates a new context
           // that clips this element to the container, not allowing it to cover the full page.
           key="backdrop"
@@ -664,17 +670,17 @@ export const BottomSheet = React.forwardRef<
         {...overlayProps}
       >
         {header !== false && (
-          <div key="header" data-rsbs-header ref={headerRef} {...bind()}>
+          <div {...headerProps} key="header" data-rsbs-header ref={headerRef} {...bind()}>
             {header}
           </div>
         )}
-        <div key="scroll" data-rsbs-scroll ref={scrollRef} {...(expandOnContentDrag ? bind({ isContentDragging: true }) : {})}>
-          <div data-rsbs-content ref={contentRef}>
+        <div {...scrollContainerProps} key="scroll"  data-rsbs-scroll ref={scrollRef} {...(expandOnContentDrag ? bind({ isContentDragging: true }) : {})}>
+          <div {...contentProps} data-rsbs-content ref={contentRef}>
             {children}
           </div>
         </div>
         {footer && (
-          <div key="footer" ref={footerRef} data-rsbs-footer {...bind()}>
+          <div {...footerProps} key="footer" ref={footerRef} data-rsbs-footer {...bind()}>
             {footer}
           </div>
         )}

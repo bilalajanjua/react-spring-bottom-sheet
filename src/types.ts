@@ -54,6 +54,31 @@ export type Props = {
   overlayProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
   /**
+   * Props passed to the backdrop div component
+   */
+  backdropProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+  /**
+  * Props passed to the header div component
+  */
+  headerProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+  /**
+  * Props passed to the scroll container component
+  */
+  scrollContainerProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+  /**
+  * Props passed to the content div component
+  */
+  contentProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+  /**
+  * Props passed to the footer div component
+  */
+  footerProps?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+  /**
    * Similar to children, but renders next to the overlay element rather than inside it.
    * Useful for things that are position:fixed and need to overlay the backdrop and still be interactive
    * in blocking mode.
